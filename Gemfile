@@ -13,10 +13,19 @@ gem "minima", "~> 2.5"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem "github-pages", group: :jekyll_plugins
+
+# Acquire bootstrap to use its SASS sources
+gem "bootstrap", "~> 5.3.2"
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-gem-resolver", "~> 1.1.1"
+  gem "jekyll-autoprefixer", "~> 1.0"
 end
+
+# Required to avoid runtime errors in jekyll-autoprefixer caused by ExecJS 2.8.0 and later
+gem "execjs", "= 2.7.0"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
